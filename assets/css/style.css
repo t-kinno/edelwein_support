@@ -1463,6 +1463,7 @@ body.page-template-page-hotelpage-php .header h1 img {
   font-family: "Sawarabi Mincho", serif;
   text-align: center;
   line-height: 1.2;
+  word-break: keep-all;
 }
 /* #restaurant .morino-kuni-address {
   font-size: 16px;
