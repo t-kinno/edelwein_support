@@ -1,0 +1,5374 @@
+﻿@charset "UTF-8";
+
+/* 01. Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: "Sawarabi Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+  background: url("../img/top/background.png");
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* 02. Header & Nav */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  background: url("../img/p0522_l 6.png");
+  background-size: cover;
+  color: #fff;
+}
+
+.header a {
+  font-family: "Sawarabi Mincho", serif;
+  color: black;
+  font-size: 23px;
+}
+
+.header h1 img {
+  width: 100%;
+  height: auto;
+}
+
+/* ロゴホバー */
+.header h1 a {
+  transition: opacity 0.3s;
+  display: block;
+}
+
+.header h1 a:hover {
+  opacity: 0.6;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  writing-mode: horizontal-tb;
+  gap: 30px;
+}
+
+.nav a {
+  font-size: 85%;
+  padding: 5px 0;
+  display: inline-block;
+  text-align: center;
+  letter-spacing: 0.2em;
+  transition: opacity 0.3s;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.nav a:nth-child(1)::after {
+  white-space: pre;
+}
+
+.nav a:nth-child(3)::after {
+  white-space: pre;
+}
+
+.nav a:nth-child(4),
+.nav a:nth-child(5) {
+  display: inline;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+  }
+
+  /* Hide nav on mobile */
+  .nav {
+    display: none;
+  }
+}
+
+/* 03. Common Components */
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  padding: 5% 0;
+  line-height: 1.5;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex-grow: 1;
+  height: 6px;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+  display: block;
+}
+
+.section-line {
+  width: 100%;
+  display: block;
+}
+
+.shop-banner {
+  display: block;
+  margin: 20px auto;
+  width: 75%;
+  height: auto;
+}
+
+/* 04. Common Sections */
+.morino-kuni {
+  display: grid;
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.morino-kuni-bg {
+  grid-area: 1 / 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.morino-kuni-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff;
+  z-index: 10;
+}
+
+.morino-kuni-title {
+  font-size: 24px;
+  font-family: "Jacques Francois", serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: 3%;
+  margin-left: 4%;
+}
+
+.morino-kuni-link {
+  font-family: "Sawarabi Mincho", serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.morino-kuni-address {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 16px;
+  font-family: "Sawarabi Mincho", serif;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+}
+
+body.home .morino-kuni-address {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.news-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.news-box {
+  width: 94%;
+  padding: 4% 3%;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  display: flex;
+  border: 1px solid #B8A36C;
+  background-color: #ffffff;
+}
+
+.news-left {
+  width: 20%;
+  padding-top: 4%;
+  padding-left: 2%;
+}
+
+.news-title {
+  font-size: 36px;
+  font-family: "Sawarabi Mincho", serif;
+  margin-bottom: 20%;
+}
+
+.news-btn {
+  display: inline-block;
+  padding: 4.5% 10.5%;
+  border: 1px solid #B8A36C;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #333;
+  background: #fff;
+  font-size: 17px;
+}
+
+.news-btn:hover {
+  background: #f5f5f5;
+}
+
+.news-right {
+  width: 80%;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+  height: 320px;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+.news-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-card-content {
+  flex-grow: 1;
+  padding: 3% 4% 4%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.news-card h3 {
+  font-size: 14px;
+  margin-bottom: 2%;
+  margin-top: 6%;
+  margin-left: 7%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.news-card p {
+  font-size: 12px;
+  color: #555;
+  margin-top: 19%;
+  text-align: right;
+  margin-right: 10%;
+}
+
+.news-card-footer {
+  height: 16px;
+  background: #dff7fa;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .news-box {
+    flex-direction: column;
+  }
+
+  .news-left {
+    width: 100%;
+    padding: 0 0 20px;
+    text-align: center;
+  }
+
+  .news-right {
+    width: 100%;
+  }
+
+  .news-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .news-card {
+    margin-bottom: 10px;
+    height: auto; /* スマホでは高さを自動調整 */
+    min-height: 200px;
+  }
+
+  .news-card img {
+    height: 100px; /* 画像の高さを小さく */
+  }
+
+  .news-card-content {
+    padding: 2% 3%;
+  }
+
+  .news-card h3 {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    -webkit-line-clamp: 2; /* スマホでも2行制限 */
+  }
+
+  .news-card p {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+  }
+}
+
+.intro-section {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.intro-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+.intro-left {
+  width: 60%;
+}
+
+.intro-img {
+  width: 70%;
+  max-width: 100%;
+  height: auto;
+  margin-left: 5%;
+}
+
+.intro-paragraph {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 20px;
+  margin-left: 5%;
+  margin-top: 3%;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  line-height: 2;
+}
+
+.intro-paragraph a,
+.intro-text-link {
+  color: #880A45;
+  text-decoration: none;
+}
+
+#glass .intro-paragraph a {
+  color: #00B3FF;
+}
+
+.right-copy-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+}
+
+.glass-ball {
+  width: 105%;
+  height: auto;
+  margin-top: -25%;
+}
+
+#restaurant .glass-ball {
+  width: 40%;
+  margin-top: -10%;
+  margin-left: 50%;
+}
+
+.copy-text {
+  width: 70%;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  margin-top: -16%;
+  margin-bottom: 10%;
+}
+
+#restaurant .copy-text {
+  width: 80%;
+  margin-top: -65%;
+}
+
+.copy-triangle {
+  width: 88%;
+  height: auto;
+  margin-top: -95%;
+}
+
+#restaurant .copy-triangle {
+  margin-top: -135%;
+}
+
+/* 05. Global Editor Styles */
+.has-text-color strong,
+.has-text-color b,
+.has-text-color em,
+.has-text-color i,
+.has-text-color a {
+  color: inherit !important;
+}
+
+.alignleft {
+  float: left;
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+  max-width: 50%;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+  max-width: 50%;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+@media screen and (max-width: 768px) {
+
+  .alignleft,
+  .alignright {
+    float: none;
+    display: block;
+    margin: 0 auto 1em;
+    max-width: 100%;
+  }
+}
+
+/* 06. Block Editor Columns */
+.wp-block-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-bottom: 1.5em;
+  align-items: stretch;
+}
+
+.wp-block-column {
+  flex-grow: 1;
+  min-width: 0;
+}
+
+.wp-block-column .wp-block-image {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.wp-block-column img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0 -0.5em 1.5em;
+}
+
+.wp-block-gallery .wp-block-image {
+  margin: 0 0.5em 1em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.wp-block-gallery .wp-block-image img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+.wp-block-media-text {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  gap: 30px;
+  align-items: center;
+  margin-bottom: 1.5em;
+}
+
+.wp-block-media-text__media img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  vertical-align: bottom;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .wp-block-columns {
+    display: block;
+  }
+
+  .wp-block-column {
+    width: 100% !important;
+    margin-bottom: 20px;
+    margin-left: 0 !important;
+  }
+
+  .wp-block-column img,
+  .wp-block-gallery .wp-block-image img,
+  .wp-block-media-text__media img {
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .wp-block-media-text {
+    display: block;
+  }
+
+  .wp-block-media-text__media {
+    margin-bottom: 15px;
+  }
+
+  .wp-block-gallery .wp-block-image {
+    width: calc(50% - 1em);
+  }
+}
+
+/* 07. Top Page / Instagram */
+body.home .morino-kuni {
+  height: calc(100vh - var(--home-header-height) - var(--home-info-height) - var(--home-line-height));
+  min-height: auto;
+  padding: 0;
+  background-size: cover;
+  background-position: center top;
+  background-image: url("../img/top/top.png");
+  display: flex;
+  /* grid解除 & フレックスボックス化 */
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+body.home .morino-kuni-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+body.home .morino-kuni-link {
+  position: absolute;
+  bottom: 18%;
+  right: 8%;
+  border-right: 2px solid #6b6b6b;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.454);
+  padding: 10px 16px;
+  margin: 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+body.home .morino-kuni-link a {
+  color: black;
+  font-size: 12px;
+  line-height: 1.6;
+  padding: 0;
+  border-radius: 4px;
+  white-space: nowrap;
+  display: inline-block;
+  transform: scale(1);
+  transform-origin: right center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+body.home .morino-kuni-link:hover a {
+  transform: scale(0.92);
+  opacity: 0.7;
+}
+
+body.home .morino-kuni-link:hover a:hover {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+body.home .morino-kuni-link a:hover {
+  color: #000000;
+  opacity: 0.7;
+}
+
+body.home .morino-kuni-title h1 {
+  text-align: left;
+  font-size: 44px;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.home .morino-kuni-title {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  margin: 0;
+}
+
+/* トップページヘッダー調整 */
+body.home .header {
+  height: var(--home-header-height);
+  padding: 0 3%;
+}
+
+body.home .header h1 img {
+  max-height: 48px;
+}
+
+body.home {
+  --home-header-height: 68px;
+  --home-info-height: 40px;
+  --home-line-height: 8px;
+}
+
+body.home .nav {
+  gap: 24px;
+}
+
+body.home .nav a {
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+}
+
+body.home .morino-kuni-address {
+  height: var(--home-info-height);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+body.home .section-line {
+  display: block;
+  width: 100%;
+  height: var(--home-line-height);
+  background:
+    linear-gradient(#B8A36C, #B8A36C) top / 100% 1px no-repeat,
+    linear-gradient(#B8A36C, #B8A36C) bottom / 100% 1px no-repeat;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  body.home {
+    --home-header-height: 0px;
+    --home-info-height: auto;
+    --home-line-height: 6px;
+  }
+
+  body.home .morino-kuni {
+    height: 50vh;
+    min-height: 400px;
+    position: relative;
+  }
+
+  body.home .morino-kuni-link {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    margin: 0;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+  body.home .morino-kuni-address {
+    height: auto;
+    white-space: normal;
+    padding: 10px 12px;
+  }
+}
+
+/* 07.5 First View Fit (Glass / Restaurant / Hotel) */
+body.single-glasspage,
+body.single-restaurantpage,
+body.page-template-page-hotelpage,
+body.page-template-page-hotelpage-php {
+  --page-header-height: 68px;
+  --page-line-height: 8px;
+}
+
+body.single-glasspage .header,
+body.single-restaurantpage .header,
+body.page-template-page-hotelpage .header,
+body.page-template-page-hotelpage-php .header {
+  height: var(--page-header-height);
+  padding: 0 3%;
+}
+
+body.single-glasspage .header h1 img,
+body.single-restaurantpage .header h1 img,
+body.page-template-page-hotelpage .header h1 img,
+body.page-template-page-hotelpage-php .header h1 img {
+  max-height: 48px;
+}
+
+#glass .morino-kuni,
+#restaurant .morino-kuni,
+#hotel .morino-kuni {
+  height: calc(100vh - var(--page-header-height, 68px) - var(--page-line-height, 8px));
+  min-height: auto;
+}
+
+#glass .section-line,
+#restaurant .section-line,
+#hotel .section-line {
+  height: var(--page-line-height, 8px);
+  margin: 0;
+  background:
+    linear-gradient(#B8A36C, #B8A36C) top / 100% 1px no-repeat,
+    linear-gradient(#B8A36C, #B8A36C) bottom / 100% 1px no-repeat;
+}
+
+@media screen and (max-width: 768px) {
+
+  body.single-glasspage,
+  body.single-restaurantpage,
+  body.page-template-page-hotelpage,
+  body.page-template-page-hotelpage-php {
+    --page-header-height: 0px;
+    --page-line-height: 6px;
+  }
+
+  body.single-glasspage #glass .morino-kuni,
+  body.single-restaurantpage #restaurant .morino-kuni,
+  body.page-template-page-hotelpage #hotel .morino-kuni,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni {
+    height: auto;
+    min-height: 40vh;
+    padding-bottom: 20px;
+  }
+  
+  /* Subpage Address on Mobile */
+  body.single-glasspage #glass .morino-kuni-sub,
+  body.single-restaurantpage #restaurant .morino-kuni-sub,
+  body.page-template-page-hotelpage #hotel .morino-kuni-sub,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-sub {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  body.single-glasspage #glass .morino-kuni-sub h1,
+  body.single-restaurantpage #restaurant .morino-kuni-sub h1,
+  body.page-template-page-hotelpage #hotel .morino-kuni-sub h1,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-sub h1 {
+    font-size: 22px;
+    line-height: 1.6;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  body.single-glasspage #glass .morino-kuni-address,
+  body.single-restaurantpage .morino-kuni-address,
+  body.page-template-page-hotelpage .morino-kuni-address,
+  body.page-template-page-hotelpage-php .morino-kuni-address {
+    position: static;
+    background: transparent;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* Ensure section line is visible on mobile for subpages */
+  #glass .section-line,
+  #restaurant .section-line,
+  #hotel .section-line {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+.purpose {
+  background-color: #fff;
+  border: 2px double #B8A36C;
+  margin-bottom: 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+}
+
+.purpose__contents {
+  display: flex;
+  margin: 0 1%;
+  min-height: 500px;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.purpose__item {
+  flex: 1;
+  text-align: center;
+}
+
+.purpose__item--restaurant {
+  margin-left: 1.3%;
+  margin-right: 1%;
+}
+
+.purpose__link {
+  display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+.purpose__item:hover .purpose__link {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
+}
+
+.purpose__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.purpose_image_hotel {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.purpose__image_glass {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.purpose__image_restaurant {
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+.purpose__label {
+  display: block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+.purpose__item:hover .purpose__label {
+  color: #B8A36C;
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Insta Section 改修 (線を画面端まで伸ばす・貫通させる) */
+.insta-section {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  /* 横スクロール防止 */
+}
+
+.insta-section .section-title {
+  margin-bottom: 3%;
+  line-height: 1.5;
+}
+
+.insta-section__img {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.grape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: -10%;
+  padding: 0 5%;
+  margin: 10px auto;
+}
+
+.grape__img--fruit {
+  width: 20%;
+  transform: translateY(-40%);
+}
+
+.grape__img--leaf {
+  width: 25%;
+  transform: translateY(-60%);
+}
+
+.grape img,
+#grape img {
+  max-width: 100%;
+  height: auto;
+}
+
+.insta-wrapper {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.insta-wrapper img,
+.insta-wrapper iframe,
+.insta-wrapper .wp-block-embed,
+.insta-wrapper .instagram-media {
+  margin: 0 auto !important;
+  display: block;
+  max-width: 100%;
+}
+
+/* インスタ見出しの線デザイン変更（貫通対応） */
+.insta-wrapper h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-weight: bold;
+  font-size: 26px;
+  text-align: center;
+  padding: 30px 0;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 100;
+  /* 他の画像より手前に表示 */
+}
+
+.insta-wrapper h2::before,
+.insta-wrapper h2::after {
+  content: "";
+  display: block;
+  flex-shrink: 0;
+  width: 200vw;
+  /* 画面幅いっぱいに指定 */
+  height: 6px;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+}
+
+.insta-wrapper h2::before {
+  margin-right: 20px;
+  margin-left: -200vw;
+  /* 左側を画面外へ伸ばす */
+}
+
+.insta-wrapper h2::after {
+  margin-left: 20px;
+  margin-right: -200vw;
+  /* 右側を画面外へ伸ばす */
+}
+
+@media screen and (max-width: 768px) {
+  .insta-wrapper h2 {
+    font-size: 20px;
+  }
+}
+
+/* トップページ余白調整 */
+.news-wrapper {
+  padding-bottom: 20px;
+}
+
+#grape {
+  margin: 10px auto;
+  height: 50px;
+  overflow: visible;
+  position: relative;
+  z-index: 20;
+}
+
+.frame-group {
+  margin: 10px auto;
+}
+
+.search-section {
+  margin-top: 10px;
+  padding-top: 0;
+}
+
+.search-section .section-title {
+  margin-top: 0;
+}
+
+.page .grape {
+  margin: 0 auto;
+  height: 50px;
+  overflow: visible;
+  position: relative;
+  z-index: 20;
+}
+
+/* 08. #glass */
+#glass .morino-kuni {
+  height: calc(100vh - var(--page-header-height, 68px) - var(--page-line-height, 8px));
+  min-height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#glass .morino-kuni-content {
+  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+  z-index: 2;
+}
+
+#glass .morino-kuni-title {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  margin: 0;
+  z-index: 2;
+}
+
+#glass .morino-kuni-title p {
+  font-size: 22px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#glass .morino-kuni-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#glass .morino-kuni-link h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#glass .morino-kuni-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#glass .morino-kuni-sub h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* #glass .morino-kuni-address {
+  font-size: 16px;
+  line-height: 1.8;
+  position: static;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  background: transparent;
+  color: #333;
+} */
+
+#glass .news-card {
+  width: auto;
+}
+
+#glass .card1 .news-card-footer,
+#glass .card2 .news-card-footer,
+#glass .card3 .news-card-footer,
+#glass .card4 .news-card-footer {
+  background: #dff7fa;
+}
+
+#glass .heading {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#glass .heading .title-block {
+  display: inline-block;
+  margin: 2% 0;
+  text-align: left;
+  max-width: 100%;
+  padding-right: 3em;
+  padding-left: 0;
+}
+
+#glass .heading .title-block h3 {
+  font-size: clamp(16px, 5vw, 36px);
+  text-align: left;
+  margin: 0 0 0 0.8em;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  #glass .heading {
+    width: 95%;
+    text-align: center;
+  }
+
+  #glass .heading .title-block {
+    margin: 2% auto;
+    text-align: center;
+    padding-right: 1em;
+    padding-left: 0;
+  }
+
+  #glass .heading .title-block h3 {
+    text-align: center;
+    margin: 0 0 0 0.45em;
+  }
+}
+
+#glass .heading .arrow-line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-left: 0;
+}
+
+#glass .heading .diamond {
+  width: clamp(14px, 1.8vw, 20px);
+  flex: 0 0 auto;
+  aspect-ratio: 1 / 1;
+  transform: rotate(45deg);
+}
+
+#glass .heading .line {
+  flex: 1;
+  height: 6px;
+  margin-left: -6px;
+  border-radius: 5px;
+}
+
+.heading.blown .diamond,
+.heading.blown .line {
+  background: #C4F6FA;
+}
+
+.heading.sandblast .diamond,
+.heading.sandblast .line {
+  background: #FFCFB5;
+}
+
+.heading.glass-fusing-heading .diamond,
+.heading.glass-fusing-heading .line {
+  background: #B4FFB7;
+}
+
+.heading.tombo-heading .diamond,
+.heading.tombo-heading .line {
+  background: #F0C3FF;
+}
+
+#glass .blownglass,
+#glass .sandblasting,
+#glass .fusing,
+#glass .tombodama,
+#glass .sandblast-content,
+#glass .glassblowing-wrapper {
+  width: 85%;
+  background-color: #fff;
+  border: 2px solid #B8A36C;
+  margin-bottom: 6%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#glass .glass-menu-body {
+  padding: 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#glass .glass-menu-body img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.reservation-notice-wrapper {
+  position: relative;
+  width: 85%;
+  margin: -20px auto 20px;
+  padding: 30px 40px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.reservation-content {
+  width: 75%;
+}
+
+.reservation-content ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.reservation-content ul li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.reservation-content ul li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000;
+}
+
+.reservation-content a {
+  color: #0000FF;
+  text-decoration: underline;
+}
+
+.info-deco-image1 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20%;
+  margin: 0;
+}
+
+.info-deco-image2 {
+  width: 25%;
+  margin-top: -11%;
+  margin-left: 2%;
+}
+
+@media screen and (max-width: 768px) {
+  #glass .intro-wrapper {
+    flex-direction: column;
+  }
+
+  #glass .intro-left,
+  #glass .right-copy-wrapper {
+    width: 100%;
+  }
+
+  #glass .blownglass,
+  #glass .sandblasting,
+  #glass .fusing,
+  #glass .tombodama {
+    width: 95%;
+  }
+
+  .reservation-notice-wrapper {
+    padding: 20px;
+    width: 95%;
+  }
+
+  .reservation-content {
+    width: 100%;
+  }
+
+  .info-deco-image1 {
+    position: static;
+    display: block;
+    width: 40%;
+    margin: 20px auto 0;
+  }
+
+  #glass .glass,
+  #glass .mini-glass,
+  #glass .single-flower-vase,
+  #glass .chopstick-rest {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #glass .glass_image,
+  #glass .mini-glass_image {
+    margin: 20px auto;
+    width: 60%;
+  }
+}
+
+
+/* 09. #restaurant */
+#restaurant .morino-kuni {
+  height: calc(100vh - var(--page-header-height, 68px) - var(--page-line-height, 8px));
+  min-height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#restaurant .morino-kuni-content {
+  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+  z-index: 2;
+}
+
+#restaurant .morino-kuni-title {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  margin: 0;
+  z-index: 2;
+}
+
+#restaurant .morino-kuni-title p {
+  font-size: 22px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#restaurant .morino-kuni-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#restaurant .morino-kuni-link h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#restaurant .morino-kuni-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#restaurant .morino-kuni-sub h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+/* #restaurant .morino-kuni-address {
+  font-size: 16px;
+  line-height: 1.8;
+  position: static;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  background: transparent;
+  color: #333;
+} */
+
+#restaurant .menu-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+  margin: 5% 5%;
+}
+
+.restaurant-banners-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.restaurant-banner-link {
+  display: block;
+  width: 48%;
+  transition: opacity 0.3s ease;
+}
+
+.restaurant-banner-link:hover {
+  opacity: 0.8;
+}
+
+.restaurant-banner-link img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#restaurant .menu-item {
+  text-align: center;
+}
+
+#restaurant .menu-item .cooking {
+  width: 70%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+#restaurant .menu-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#restaurant .menu-title--2gyo {
+  margin-top: 8.5%;
+  margin-bottom: 8.5%;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#restaurant .menu-title--3gyo {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  min-height: 4.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#restaurant .menu-name {
+  margin-top: 2.5%;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#restaurant .menu-price {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.menu-info {
+  font-size: 0.85em;
+  color: #3f3f3f;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+#restaurant #set-info,
+#restaurant #side-info {
+  text-align: right;
+  margin-right: 10%;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+#restaurant #wine-line-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 60px 0;
+}
+
+#restaurant .wine-icon-wrapper {
+  z-index: 2;
+  background: #fff;
+  padding: 0 10px;
+}
+
+#restaurant .wine-glass-icon {
+  width: 40px;
+}
+
+#restaurant .middle-lines {
+  position: absolute;
+  width: 60%;
+  height: 20px;
+  z-index: 1;
+}
+
+#restaurant .middle-lines::before,
+#restaurant .middle-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #c2a661;
+}
+
+#restaurant .middle-lines::before {
+  top: 6px;
+}
+
+#restaurant .middle-lines::after {
+  bottom: 6px;
+}
+
+#restaurant .menu-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 40px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 5%;
+  gap: 30px;
+}
+
+#restaurant .menu-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#restaurant .menu-title--two-lines {
+  margin-top: 5%;
+  margin-bottom: 8%;
+  min-height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#restaurant .double-line {
+  border-top: 1px solid #c8ab75;
+  border-bottom: 1px solid #c8ab75;
+  height: 8px;
+  margin: 40px 10%;
+}
+
+#restaurant .wine-header-section {
+  text-align: left;
+  margin-bottom: 20px;
+  margin-left: 8%;
+}
+
+#restaurant .wine-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-top: 3%;
+}
+
+#restaurant #wine-title {
+  font-size: 40px;
+  color: #63173B;
+  border-bottom: none;
+}
+
+#restaurant .wine-icon-small {
+  width: 40px;
+  height: auto;
+}
+
+#restaurant .wine-list-section,
+#restaurant .drink-section {
+  width: 90%;
+  background-color: #fff;
+  border: 2px solid #B8A36C;
+  margin: 0 auto 10%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 3%;
+}
+
+#restaurant .wine-contents {
+  font-size: 16px;
+  margin: 3% 5%;
+}
+
+#restaurant .wine-item {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: start;
+  margin-bottom: 30px;
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 15px;
+}
+
+#restaurant .wine-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#restaurant .wine-name {
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+#restaurant .wine-description {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+#restaurant .wine-price {
+  font-size: 16px;
+  text-align: right;
+  font-weight: normal;
+}
+
+#restaurant .price-bottle {
+  display: block;
+}
+
+.menu-info--wine {
+  text-align: right;
+}
+
+#restaurant .drink-header-section {
+  text-align: left;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  margin-left: 8%;
+}
+
+#restaurant .drink-header {
+  display: inline-block;
+  border-bottom: none;
+}
+
+#restaurant #drink-title {
+  font-size: 40px;
+  margin: 0;
+}
+
+#restaurant .drink-contents {
+  font-size: 16px;
+  margin: 3% 5%;
+  position: relative;
+}
+
+#restaurant .drink-item {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: baseline;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+}
+
+#restaurant .drink-name {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+#restaurant .drink-price {
+  font-size: 1.2rem;
+  text-align: right;
+  font-weight: normal;
+}
+
+#restaurant .price-glass,
+#restaurant .price-bottle {
+  font-weight: normal;
+}
+
+#restaurant .drink-image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.drink-item {
+  align-items: flex-start;
+}
+
+.drink-price-wrapper {
+  text-align: right;
+}
+
+.menu-info--drink {
+  margin-top: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  #restaurant .intro-wrapper {
+    flex-direction: column;
+  }
+
+  #restaurant .intro-left {
+    width: 100%;
+  }
+
+  #restaurant .right-copy-wrapper {
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  #restaurant .menu-row,
+  #restaurant .menu-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  #restaurant .wine-item,
+  #restaurant .drink-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  #restaurant .wine-price {
+    text-align: right;
+    margin-top: 15px;
+    margin-left: 0;
+  }
+
+  #restaurant .drink-price {
+    text-align: right;
+    margin-left: 0;
+  }
+
+  #restaurant .drink-image {
+    width: 30%;
+    bottom: -20px;
+  }
+
+  .restaurant-banners-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .restaurant-banner-link {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .menu-info--wine {
+    text-align: right;
+  }
+
+  .drink-price-wrapper {
+    text-align: right;
+    margin-top: 15px;
+  }
+}
+
+/* 10. #groupmenu */
+#groupmenu .menu-wrapper {
+  margin: 40px auto;
+  max-width: 900px;
+  width: 95%;
+}
+
+#groupmenu .menu-contents {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  background: linear-gradient(to right,
+      #ffffff 0%,
+      #ffffff calc(100% - 60px),
+      #9C2A6E calc(100% - 60px),
+      #9C2A6E 100%);
+  border: 2px solid #B8A36C;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 40px 5%;
+  padding-right: calc(5% + 60px);
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+#groupmenu #frame-line-2 {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  right: 18px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+
+#groupmenu #frame-line-1 {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e5e5;
+  margin: 0 0 40px 0;
+}
+
+#groupmenu .menu-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  margin-bottom: 40px;
+}
+
+#groupmenu .menu-item {
+  width: 48%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#groupmenu .menu-title-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+#groupmenu .menu-title {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 32px !important;
+  font-weight: normal;
+  color: #333;
+  margin: 0;
+  line-height: 1.2;
+}
+
+#groupmenu .price {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 20px !important;
+  font-weight: bold;
+  color: #8a6854;
+  margin: 0;
+}
+
+#groupmenu .title-note {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+#groupmenu .menu-desc {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 15px !important;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+#groupmenu .menu-item img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 0;
+}
+
+#groupmenu .menu-note {
+  text-align: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #000;
+  margin-top: 20px;
+}
+
+#groupmenu .menu-notice {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0 20px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#groupmenu .menu-notice ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+#groupmenu .menu-notice ul li {
+  margin-bottom: 5px;
+}
+
+#groupmenu #phone {
+  color: #1B24FF;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  #groupmenu .section-title {
+    margin-top: 35px;
+    font-size: 20px;
+  }
+
+  #groupmenu .menu-contents {
+    padding: 30px 15px;
+    padding-right: calc(15px + 40px); /* 右側にスペース確保 */
+    background: linear-gradient(to right,
+        #ffffff 0%,
+        #ffffff calc(100% - 40px),
+        #9C2A6E calc(100% - 40px),
+        #9C2A6E 100%);
+  }
+
+  #groupmenu #frame-line-2 {
+    display: block;
+    right: 12px;
+  }
+
+  #groupmenu .menu-item {
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 30px;
+  }
+
+  #groupmenu .menu-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  #groupmenu .menu-title {
+    font-size: 26px !important;
+  }
+}
+
+/* 11. #banquet_plan */
+body.page-template-page-banquet_plan {
+  background-image: url("../img/banquet_plan/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+#banquet_plan .main__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-family: "Sawarabi Mincho", serif;
+  margin-top: 40px;
+  white-space: nowrap;
+}
+
+#banquet_plan .main__ttl::before,
+#banquet_plan .main__ttl::after {
+  display: block;
+  flex: 1;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100% 100%;
+  content: "";
+}
+
+#banquet_plan .main__ttl::before {
+  background-image: url("../img/banquet_plan/ttl_left.png");
+  margin-right: 30px;
+}
+
+#banquet_plan .main__ttl::after {
+  background-image: url("../img/banquet_plan/ttl_right.png");
+  margin-left: 30px;
+}
+
+#banquet_plan .move_restaurant {
+  display: block;
+  text-align: left;
+  margin: 39px 56px 0;
+  font-size: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+#banquet_plan .banquet__inner {
+  width: 88%;
+  max-width: 1270px;
+  margin: 0 auto;
+}
+
+#banquet_plan .banquet_intro__lead {
+  display: block;
+  text-align: center;
+  position: relative;
+  margin: 76px 0 45px;
+  padding: 60px 120px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 29px;
+  line-height: 1.34;
+  color: #8a6854;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#banquet_plan .banquet_intro__lead::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  box-sizing: border-box;
+  content: "";
+  border-top: 1px solid #b8a36c;
+  border-bottom: 1px solid #b8a36c;
+}
+
+#banquet_plan .banquet_intro__note {
+  display: grid;
+  row-gap: 16px;
+  text-align: center;
+  margin: 40px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 24px;
+  line-height: 1.4;
+  color: #000000;
+}
+
+#banquet_plan hr {
+  border: none;
+  height: 6px;
+  box-sizing: border-box;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+  margin: 24px 0;
+}
+
+#banquet_plan .banquet_rooms__ttl {
+  position: relative;
+  display: inline-block;
+  padding-left: 32px;
+  margin: 40px 0 36px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #000;
+  border-bottom: 1px solid #b8a36c;
+}
+
+#banquet_plan .banquet_rooms__ttl::before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 6px;
+  height: 38px;
+  content: "";
+  background-color: #b8a36c;
+}
+
+#banquet_plan .banquet_rooms__ttl::after {
+  position: absolute;
+  left: 10px;
+  bottom: 0;
+  width: 2px;
+  height: 38px;
+  content: "";
+  background-color: #b8a36c;
+}
+
+#banquet_plan .banquet_rooms__list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#banquet_plan .banquet_rooms__room {
+  margin: 0;
+  width: 25.8%;
+}
+
+#banquet_plan .banquet_rooms__room img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#banquet_plan .banquet_rooms__name {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+#banquet_plan .banquet_rooms__address {
+  display: block;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 20px;
+}
+
+#banquet_plan .article_divider {
+  height: 6px;
+  box-sizing: border-box;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+}
+
+#banquet_plan .banquet_fees__ttl {
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  font-size: 36px;
+  font-family: "Sawarabi Mincho", serif;
+}
+
+#banquet_plan .banquet_fees__note {
+  display: block;
+  text-align: right;
+  margin: 10px auto;
+  font-size: 20px;
+}
+
+#banquet_plan .banquet_fees__image-area {
+  margin: 24px auto;
+  text-align: center;
+}
+
+#banquet_plan .banquet_fees__img {
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#banquet_plan .banquet_contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  text-align: center;
+  border: 3px double #b8a36c;
+  margin: 60px auto 100px;
+  width: 590px;
+  padding: 20px 24px;
+  font-size: 24px;
+}
+
+#banquet_plan .banquet_contact p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+#banquet_plan .banquet_contact a {
+  white-space: nowrap;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  #banquet_plan .main__ttl {
+    font-size: 20px;
+    margin-top: 60px;
+    gap: 1rem;
+  }
+
+  #banquet_plan .main__ttl::before,
+  #banquet_plan .main__ttl::after {
+    background-image: none;
+    height: 6px;
+    border-top: 1px solid #B8A36C;
+    border-bottom: 1px solid #B8A36C;
+    margin: 0;
+  }
+
+  #banquet_plan .move_restaurant {
+    margin: 20px 15px;
+    font-size: 16px;
+  }
+
+  #banquet_plan .banquet__inner {
+    width: 95%;
+  }
+
+  #banquet_plan .banquet_intro__lead {
+    padding: 30px 15px;
+    font-size: 18px;
+  }
+
+  #banquet_plan .banquet_rooms__list {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  #banquet_plan .banquet_rooms__room {
+    width: 80%;
+  }
+
+  #banquet_plan .banquet_contact {
+    width: 95%;
+    flex-direction: row;
+    gap: 10px;
+    margin: 40px auto 60px;
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  #banquet_plan .banquet_contact a {
+    font-size: 18px;
+  }
+
+  #banquet_plan .banquet_fees__ttl {
+    font-size: 18px;
+  }
+
+  #banquet_plan .banquet_fees__note {
+    font-size: 10px;
+    text-align: right;
+  }
+
+  #banquet_plan .fee-table {
+    font-size: 9px;
+    min-width: 0;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  #banquet_plan .fee-table th,
+  #banquet_plan .fee-table td {
+    height: auto;
+    padding: 2px 0;
+    line-height: 1.1;
+    letter-spacing: -0.05em;
+    overflow-wrap: break-word;
+  }
+}
+
+/* 12. #contact */
+body.page-template-page-contactpage {
+  background-image: url("assets/img/top/background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+}
+
+#contact .main__ttl {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-bottom: 0;
+  border-bottom: none;
+  width: 100%;
+}
+
+#contact .main__ttl::before,
+#contact .main__ttl::after {
+  content: "";
+  flex-grow: 1;
+  height: 6px;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+  display: block;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto 100px;
+  font-family: "Sawarabi Mincho", serif;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 60px;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.form-row {
+  margin-bottom: 30px;
+}
+
+.form-row label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.required-badge {
+  background-color: #FF1A1A;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  margin-left: 15px;
+  font-weight: normal;
+}
+
+.wpcf7-text,
+.wpcf7-textarea,
+.wpcf7-select {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-sizing: border-box;
+  font-family: "Sawarabi Mincho", serif;
+}
+
+.wpcf7-textarea {
+  height: 300px;
+}
+
+.form-submit-area {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.wpcf7-submit {
+  background-color: #FCDE6D;
+  color: #333;
+  border: none;
+  padding: 15px 80px;
+  font-size: 18px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  border-radius: 4px;
+}
+
+.wpcf7-submit:hover {
+  opacity: 0.8;
+}
+
+.wpcf7-not-valid-tip {
+  font-size: 14px;
+  color: #FF1A1A;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  #contact .main__ttl {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+
+  .contact-intro {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .form-row label {
+    font-size: 16px;
+  }
+
+  .wpcf7-submit {
+    width: 100%;
+    padding: 15px 0;
+  }
+}
+
+/* 13. Page Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  width: 60px;
+  height: auto;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.back-to-top img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+  opacity: 0.8;
+}
+
+/* 14. #archive */
+#archive .title {
+  font-size: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#archive .title::before,
+#archive .title::after {
+  content: "";
+  flex-grow: 1;
+  height: 6px;
+  background-color: transparent;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+  display: block;
+}
+
+#archive .title::before {
+  margin-right: 20px;
+}
+
+#archive .title::after {
+  margin-left: 20px;
+}
+
+#archive .filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#archive .filter button {
+  background-color: white;
+  border: 1px #B8A36C solid;
+  border-radius: 5px;
+  padding: 7px 15px;
+  margin-right: 10px;
+}
+
+#archive .filter button:hover {
+  background-color: #B8A36C;
+  color: white;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#archive .filter .is-on {
+  background-color: #B8A36C;
+  color: white;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+#archive .article-boxs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 16px;
+  width: 94%;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+#archive .article-boxs article {
+  height: 100%;
+  display: flex;
+}
+
+#archive .article-box {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  overflow-wrap: break-word;
+  position: static;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+#archive .under-color {
+  width: 100%;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  height: 100%;
+}
+
+#archive .article-img {
+  width: 100%;
+  height: 150px;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+#archive .article-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: 0;
+  position: static;
+  width: 100%;
+  padding: 0 12px 12px;
+}
+
+#archive .article-title {
+  margin: 12px 12px 6px;
+  font-size: 14px;
+}
+
+#archive .article-title:hover {
+  color: #B8A36C;
+}
+
+#archive .article-title a {
+  text-decoration: none;
+}
+
+#archive .article-time {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+}
+
+#archive .category {
+  margin: 0;
+  font-size: 12px;
+  margin-left: auto;
+  color: #555;
+}
+
+#archive .category a {
+  text-decoration: none;
+}
+
+#archive .border {
+  line-height: 1.5;
+  margin-top: 10px;
+  background-color: #B8A36C;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+}
+
+#archive .pagination {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+#archive .page-numbers {
+  margin: 0 5px;
+  border-radius: 30px;
+}
+
+#archive .pagination .page-numbers:not(.current, .next.page-numbers) {
+  color: #B8A36C;
+  padding: 16px 22px;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#archive .pagination .current {
+  background-color: rgba(128, 128, 128, 0.2);
+  border-radius: 10px;
+  color: black;
+  padding: 16px 22px;
+  text-decoration: none;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+#archive .pagination .page-numbers:not(.prev):hover,
+.page-numbers:not(.next):hover {
+  background-color: #ddd;
+  border-radius: 10px;
+}
+
+#archive .pagination .next.page-numbers,
+.prev.page-numbers {
+  background-color: white;
+  border: #B8A36C 1px solid;
+  text-align: center;
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0 50px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  #archive .article-boxs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #archive .title {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+
+  #archive .article-boxs {
+    grid-template-columns: 1fr;
+  }
+
+  #archive .filter {
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  #archive .filter button {
+    padding: 7px 12px;
+    margin-top: 10px;
+    font-size: 9px;
+  }
+
+  #archive .article-img {
+    height: 150px;
+  }
+
+  #archive .article-info {
+    padding: 0 10px;
+    font-size: 13px;
+  }
+
+  #archive .article-title {
+    font-size: 15px;
+  }
+
+  #archive .pagination {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  #archive .page-numbers {
+    margin: 0 2px;
+  }
+
+  #archive .pagination .next.page-numbers,
+  .prev.page-numbers {
+    padding: 0 20px;
+    height: 30px;
+    margin: auto 0;
+  }
+}
+
+#archive .article-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+
+#archive .article-link:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* 15. #single-article */
+#single-article .borders {
+  margin: 30px 0;
+}
+
+#single-article .border {
+  line-height: 1.5;
+  margin-top: 10px;
+  background-color: #B8A36C;
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+}
+
+#single-article .back-to-list {
+  display: block;
+  width: 140px;
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px #B8A36C solid;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 0 150px;
+}
+
+#single-article .back-color {
+  color: #B8A36C;
+  margin-right: 10px;
+}
+
+#single-article .article-img {
+  display: block;
+  margin: auto;
+}
+
+#single-article .content-title {
+  font-size: 40px;
+}
+
+#single-article .article-content {
+  margin: 20px 20%;
+}
+
+#single-article .content-flex {
+  display: flex;
+}
+
+#single-article .content-time {
+  bottom: 0;
+  margin-left: auto;
+  padding-top: 55px;
+}
+
+#single-article .content-category {
+  margin-bottom: 45px;
+  font-size: 24px;
+}
+
+#single-article .category-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+  display: inline-block;
+}
+
+#single-article .content-category a {
+  text-decoration: none;
+}
+
+#single-article .the-content {
+  margin: 50px 0px;
+}
+
+#single-article .navbar {
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+}
+
+#single-article .box-color {
+  width: 250px;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+#single-article .box-color::after {
+  content: "";
+  height: 16px;
+  background-color: var(--under-color, #333333);
+  flex-shrink: 0;
+}
+
+#single-article .box {
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+#single-article .box-title {
+  margin: 0;
+  padding: 12px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
+
+#single-article .title-link_prev a,
+#single-article .title-link_next a {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  line-height: 1.4;
+  max-height: 2.8em;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin: 0;
+}
+
+#single-article .next-text {
+  text-align: right;
+}
+
+#single-article .prev-text,
+#single-article .next-text {
+  margin-bottom: 10px;
+}
+
+#single-article .links {
+  height: 100px;
+  margin: 0px 40px;
+}
+
+#single-article .navPrev {
+  display: flex;
+  align-items: center;
+}
+
+#single-article .navPrev:hover .box-color,
+#single-article .navNext:hover .box-color {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+  opacity: 0.9;
+}
+
+#single-article .navNext {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+#single-article .nav_thumbnail {
+  width: 100%;
+  height: 150px;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+#single-article .nav_category {
+  text-align: right;
+  order: 2;
+  margin-top: 4px;
+}
+
+#single-article .nav_category_text {
+  color: #555;
+  font-size: 12px;
+}
+
+#single-article .nav_time {
+  order: 1;
+  margin-top: auto;
+  font-size: 12px;
+  color: #555;
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  #single-article .back-to-list {
+    width: 120px;
+    margin: 0 10px;
+    font-size: 13px;
+    padding: 5px 8px;
+    border: none;
+  }
+
+  #single-article .article-img {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  #single-article .content-title {
+    font-size: 25px;
+    margin: 10px 0;
+  }
+
+  #single-article .article-content {
+    margin: 10px 5%;
+  }
+
+  #single-article .content-flex {
+    flex-direction: column;
+  }
+
+  #single-article .content-time {
+    padding-top: 10px;
+    font-size: 9px;
+  }
+
+  #single-article .content-category {
+    margin-bottom: 30px;
+    font-size: 13px;
+  }
+
+  #single-article .category-color {
+    width: 15px;
+    height: 15px;
+  }
+
+  #single-article .the-content {
+    margin: 20px 0px;
+  }
+
+  #single-article .navbar {
+    flex-direction: column;
+    gap: 20px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  #single-article .box-color {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  #single-article .box {
+    padding: 0;
+  }
+
+  #single-article .title-link_prev a,
+  #single-article .title-link_next a {
+    font-size: 12px;
+  }
+
+  #single-article .title-link_next {
+    text-align: right;
+  }
+
+  #single-article .prev-text,
+  #single-article .next-text {
+    display: none;
+  }
+
+  #single-article .links {
+    height: 20px;
+    margin: 0 10px;
+  }
+
+  #single-article .nav_thumbnail {
+    height: 120px;
+  }
+
+  #single-article .nav_category {
+    display: block;
+    font-size: 11px;
+  }
+
+  #single-article .nav_time {
+    display: block;
+    font-size: 11px;
+  }
+}
+
+/* 16. Footer */
+.footer {
+  background-image: url("../img/footer/footer_bg.png");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+.footer_title {
+  color: #63173B;
+  font-size: 48px;
+  text-align: center;
+  padding-top: 340px;
+  margin-bottom: 60px;
+  font-family: 'Sawarabi Mincho', serif;
+}
+
+.footer_company {
+  width: 70%;
+  padding: 5px 20px 3% 20px;
+  margin: 0 auto 40px auto;
+  background-color: rgba(255, 255, 255, 0.56);
+  border-radius: 10px;
+  position: relative;
+}
+
+.footer_company_title {
+  font-size: 24px;
+  color: black;
+  margin: 20px 0;
+  font-family: 'Sawarabi Mincho', serif;
+}
+
+.footer_company_content {
+  display: flex;
+  gap: 5%;
+}
+
+.footer_company_content_imgdiv {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.footer_company_content_imgdiv::after {
+  content: "-";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: lightgray;
+  background-color: lightgray;
+  display: block;
+  border-radius: 10px;
+  bottom: -10px;
+  left: 10px;
+  z-index: -1;
+}
+
+.footer_company_content_imgdiv_img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  object-fit: cover;
+}
+
+.footer_company_content_textdiv {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+
+.footer_company_content_textdiv-flex {
+  display: flex;
+  gap: 30px;
+}
+
+.footer_company_content_textdiv p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.footer_company_content_textdiv_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: auto;
+  min-width: 160px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 2px solid #B8A36C;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.footer_company_content_textdiv_button:hover {
+  background-color: #B8A36C;
+  color: #fff;
+}
+
+.footer_company_content_textdiv_button div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer_company_content_textdiv_button_img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.footer_map {
+  width: 70%;
+  padding: 20px 2% 1% 2%;
+  margin: 0 auto 40px auto;
+  background-color: rgba(255, 255, 255, 0.56);
+  border-radius: 10px;
+}
+
+.footer_map_mapdiv {
+  display: flex;
+  width: 100%;
+}
+
+.footer_map_mapdiv_map {
+  position: relative;
+  z-index: 10;
+  width: 75%;
+  height: 270px;
+  margin: 0 2%;
+}
+
+.footer_map_mapdiv_map::after {
+  content: "-";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: lightgray;
+  background-color: lightgray;
+  display: block;
+  border-radius: 10px;
+  bottom: -10px;
+  left: 10px;
+  z-index: -1;
+}
+
+.footer_map_mapdiv_map iframe {
+  border-radius: 10px;
+}
+
+.footer_map_mapdiv_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 20%;
+  text-align: center;
+}
+
+.footer_map_mapdiv_text_icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.footer_map_mapdiv_text p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.footer_map_mapdiv_text_p {
+  display: block;
+  text-align: left;
+}
+
+.footer_map_mapdiv_text_span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer_map_text {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 0;
+  line-height: 2;
+}
+
+.footer_contact {
+  width: 70%;
+  margin: 0 auto 40px auto;
+  border: #A5A081 1px solid;
+  padding: 30px 2%;
+}
+
+.footer_contact_title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 0.2em;
+  font-family: 'Sawarabi Mincho', serif;
+}
+
+.footer_contact_content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.footer_contact_content_company {
+  width: 45%;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_contact_content_company_title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: left;
+  border-bottom: 1px solid #B8A36C;
+  padding-bottom: 5px;
+  display: inline-block;
+}
+
+.footer_contact_content_company_detail {
+  display: flex;
+  gap: 20px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.footer_contact_content_company_button {
+  display: inline-block;
+  text-align: center;
+  margin: 15px auto 0 auto;
+  width: auto;
+  min-width: 120px;
+  padding: 5px 15px;
+  background-color: #fff;
+  border: 2px solid #B8A36C;
+  color: #000;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer_contact_content_company_button:hover {
+  background-color: #B8A36C;
+  color: #fff;
+}
+
+.footer_nav {
+  width: 70%;
+  margin: 0 auto 40px auto;
+}
+
+.footer_nav ul {
+  width: 100%;
+  margin: 0 auto 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.footer_nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+.footer_nav ul li a:hover {
+  color: #B8A36C;
+}
+
+.footer_copyright {
+  text-align: center;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  width: 50px;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.back-to-top img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer_title {
+    padding-top: 150px;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .footer_company {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .footer_company_title {
+    font-size: 24px;
+    color: black;
+    margin: 20px 0;
+    font-family: 'Sawarabi Mincho', serif;
+  }
+
+  .footer_company_content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer_company_content_imgdiv {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer_company_content_textdiv {
+    width: 100%;
+    font-size: 14px;
+    padding-bottom: 0;
+  }
+
+  .footer_company_content_textdiv-flex {
+    gap: 15px;
+  }
+
+  .footer_company_content_textdiv p {
+    font-size: 14px;
+  }
+
+  .footer_company_content_textdiv_button {
+    margin: 30px auto 0 auto;
+    position: static;
+  }
+
+  .footer_map {
+    width: 90%;
+    padding: 20px 10px;
+  }
+
+  .footer_map_mapdiv {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .footer_map_mapdiv_text {
+    width: 25%;
+    font-size: 10px;
+  }
+
+  .footer_map_mapdiv_text_icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px;
+  }
+
+  .footer_map_mapdiv_text_span {
+    font-size: 16px;
+  }
+
+  .footer_map_mapdiv_map {
+    width: 70%;
+    height: 180px;
+    margin: 0 0 0 5%;
+  }
+
+  .footer_map_text {
+    font-size: 11px;
+    margin-top: 15px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  .footer_map_text {
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: left;
+  }
+
+  .footer_contact {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .footer_contact_title {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 0.2em;
+    font-family: 'Sawarabi Mincho', serif;
+  }
+
+  .footer_contact_content {
+    flex-direction: column;
+  }
+
+  .footer_contact_content_company {
+    width: 100%;
+    margin-bottom: 40px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 20px;
+  }
+
+  .footer_contact_content_company:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .footer_contact_content_company_title {
+    text-align: center;
+    display: block;
+    border-bottom: none;
+  }
+
+  .footer_contact_content_company_detail {
+    justify-content: center;
+  }
+
+  .footer_contact_content_company_button {
+    margin: 15px auto 0 auto;
+  }
+
+  .footer_nav {
+    width: 90%;
+  }
+
+  .footer_nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* 17. #company_info */
+#company_info .main__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+  font-size: 40px;
+}
+
+#company_info .main__ttl::before,
+#company_info .main__ttl::after {
+  display: block;
+  flex: 1;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100% 100%;
+  content: "";
+  border-top: 1px solid #B8A36C;
+  border-bottom: 1px solid #B8A36C;
+}
+
+#company_info .main__ttl::before {
+  margin-right: 30px;
+}
+
+#company_info .main__ttl::after {
+  margin-left: 30px;
+}
+
+#company_info .spirit,
+#company_info .philosophy {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 954px;
+}
+
+#company_info .spirit__ttl,
+#company_info .philosophy__ttl {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 32px;
+  margin-top: 30px;
+}
+
+#company_info .spirit__ttl::before,
+#company_info .philosophy__ttl::before {
+  content: "◆";
+  margin-right: 10px;
+}
+
+#company_info .spirit__p,
+#company_info .philosophy__p {
+  margin-left: 93px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#company_info .info__table {
+  margin: 56px auto 0;
+  width: 55%;
+  max-width: 910px;
+  text-align: left;
+  font-size: 20px;
+}
+
+#company_info .info__table,
+#company_info .info__th,
+#company_info .info__td {
+  padding: 10px 20px;
+  border: 2px solid #B8A36C;
+  border-collapse: collapse;
+}
+
+#company_info .info__th {
+  background-color: #d9d9d9;
+  width: 25%;
+}
+
+#company_info .info__td {
+  background-color: #ffffff;
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+  #company_info .main__ttl {
+    font-size: 30px;
+    margin-bottom: 60px;
+  }
+
+  #company_info .spirit__ttl,
+  #company_info .philosophy__ttl {
+    font-size: 24px;
+  }
+
+  #company_info .spirit__p,
+  #company_info .philosophy__p {
+    font-size: 20px;
+  }
+
+  #company_info .info__table {
+    margin: 40px auto 0;
+    width: 80%;
+  }
+
+  #company_info .info__table,
+  #company_info .info__th,
+  #company_info .info__td {
+    font-size: 14px;
+  }
+
+  #company_info .main__ttl::before,
+  #company_info .main__ttl::after {
+    border-top: 1px solid #B8A36C;
+    border-bottom: 1px solid #B8A36C;
+  }
+}
+
+/* 18. #hotel */
+#hotel body {
+  background-image: url(../img/hotel/background.png);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#hotel .hidden {
+  display: none;
+}
+
+#hotel .morino-kuni {
+  height: calc(100vh - var(--page-header-height, 68px) - var(--page-line-height, 8px));
+  min-height: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+#hotel .glass-ball {
+  width: 40%;
+  margin-top: -10%;
+  margin-left: 50%;
+}
+
+#hotel .morino-kuni-content {
+  grid-area: 1 / 1;
+  position: absolute;
+  inset: 0;
+  display: block;
+  padding: 0;
+  z-index: 2;
+}
+
+#hotel .morino-kuni-title {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  margin: 0;
+  z-index: 2;
+}
+
+#hotel .morino-kuni-title p {
+  font-size: 22px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+#hotel .morino-kuni-link {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#hotel .morino-kuni-link h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+#hotel .morino-kuni-sub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  width: auto;
+  padding: 0 6%;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  z-index: 2;
+}
+
+#hotel .morino-kuni-sub h1 {
+  font-size: 62px;
+  margin: 0;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* #hotel .morino-kuni-address {
+  font-size: 16px;
+  line-height: 1.8;
+  position: static;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  background: transparent;
+  color: #333;
+} */
+
+#hotel .header {
+      background-image: url(../img/hotel/hotelHeaderBackground.png);  aspect-ratio: 1440 / 652;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#hotel .header__ttl {
+  color: white;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 32px;
+  position: absolute;
+  top: 48px;
+  left: 57px;
+}
+
+#hotel .header__catch {
+  color: white;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 64px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#hotel .info_bar {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#hotel .info_bar__item {
+  display: grid;
+  grid-template-columns: auto 2rem auto;
+  row-gap: 8px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 22px;
+}
+
+#hotel .info_bar__item-dt {
+  grid-column: 1;
+  text-align: right;
+  position: relative;
+}
+
+#hotel .info_bar__item-dt::after {
+  content: "：";
+  position: absolute;
+  right: -1.75rem;
+  color: #868686;
+}
+
+#hotel .info_bar__item-dd {
+  grid-column: 3;
+  margin: 0;
+  color: #868686;
+}
+
+#hotel hr.double_line {
+  border: none;
+  height: 0;
+  width: 100%;
+  margin: 10px auto;
+  position: relative;
+}
+
+#hotel hr.double_line::before,
+#hotel hr.double_line::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #B8A36C;
+  margin: 5px 0;
+}
+
+
+#hotel .news {
+  background-color: #ffffff;
+  margin: 50px;
+  display: flex;
+  border: 1px #EAD4B6 solid;
+  font-family: "Sawarabi Mincho", serif;
+  justify-content: center;
+  align-items: center;
+}
+
+#hotel .news__ttl {
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+#hotel .news__move {
+  border: 1px #B8A36C solid;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 5px;
+}
+
+#hotel .news__card {
+  border-radius: 5%;
+  box-shadow: 0 4px 10px #00000026;
+  overflow: hidden;
+  margin: 10px;
+  width: 15%;
+  height: auto;
+}
+
+#hotel .news__card img {
+  width: 100%;
+}
+
+#hotel .news__card h3,
+#hotel .news__card p {
+  margin: 10px;
+}
+
+#hotel .news__color {
+  display: block;
+  width: 100%;
+  height: 10px;
+  background-color: #fff61b59;
+}
+
+#hotel .intro {
+  display: flex;
+  margin: 20px 60px;
+}
+
+#hotel .intro__left {
+  width: 70%;
+}
+
+#hotel .intro__p {
+  font-size: 20px;
+  font-family: "Sawarabi Mincho", serif;
+  margin-top: 20px;
+  line-height: 140%;
+}
+
+#hotel .intro__right {
+  position: relative;
+  width: 30%;
+  min-height: 400px;
+}
+
+#hotel .intro__lead-deco {
+  margin-top: -20px;
+}
+
+
+#hotel .intro__lead-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 100%;
+  background-image: url("../img/hotel/hotelLeadPhrase.png");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+#hotel .intro__lead {
+  position: absolute;
+  right: 24px;
+  bottom: 50px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 52px;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+  z-index: 1;
+}
+
+#hotel .right-copy-wrapper {
+  position: relative;
+  min-height: 400px;
+}
+
+.menu-empty-message {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wine-empty-message,
+.drink-empty-message {
+  text-align: center;
+}
+
+#hotel .banner__link {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 1178px;
+  margin: 0 auto;
+}
+
+#hotel .banner__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#hotel .banner__txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  font-family: "Sawarabi Mincho", serif;
+  text-align: center;
+  z-index: 1;
+  text-shadow: -1px -1px 0 #535C66, 1px -1px 0 #535C66, -1px 1px 0 #535C66, 1px 1px 0 #535C66;
+}
+
+#hotel .menu__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 40px;
+  margin: 60px 0;
+}
+
+#hotel .menu__ttl::before,
+#hotel .menu__ttl::after {
+  display: block;
+  flex: 1;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100% 100%;
+  content: "";
+}
+
+#hotel .menu__ttl::before {
+  background-image: url(../img/hotel/ttl_left.png);
+  margin-right: 30px;
+}
+
+#hotel .menu__ttl::after {
+  background-image: url(../img/hotel/ttl_right.png);
+  margin-left: 30px;
+}
+
+#hotel {
+  --room-title-accent: #c4a66f;
+  --room-title-bg: #ffffff;
+  --room-title-skew: -30deg;
+  --room-title-border: 21px;
+  --room-title-width: max-content;
+}
+
+#hotel .room__ttl,
+#hotel .budonoyu__ttl {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 40px;
+  background-color: var(--room-title-bg);
+  color: #000;
+  text-align: center;
+  transform-origin: center;
+  transform: skewX(var(--room-title-skew));
+  border: 1px solid var(--room-title-accent);
+  border-left-width: var(--room-title-border);
+  box-sizing: border-box;
+  width: var(--room-title-width, max-content);
+  max-width: 100%;
+}
+
+#hotel .room__ttl-text {
+  position: static;
+  transform: skewX(calc(var(--room-title-skew) * -1));
+  font-family: "Sawarabi Mincho", serif;
+  font-size: clamp(20px, 3vw, 40px);
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#hotel .menu__rooms:nth-of-type(even) .room__ttl {
+  align-self: flex-end;
+  transform: skewX(calc(var(--room-title-skew) * -1));
+  border-left-width: var(--room-title-border);
+  border-right-width: 1px;
+}
+
+#hotel .menu__rooms:nth-of-type(odd) .room__ttl {
+  align-self: flex-start;
+}
+
+#hotel .menu__rooms:nth-of-type(even) .room__ttl .room__ttl-text {
+  transform: skewX(var(--room-title-skew));
+}
+
+#hotel .menu__rooms {
+  margin: 40px auto;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+#hotel #large_bath .budonoyu__ttl {
+  margin-left: 2.5%;
+  margin-right: auto;
+}
+
+#hotel .budonoyu__ttl--text {
+  position: static;
+  transform: skewX(calc(var(--room-title-skew) * -1));
+  font-family: "Sawarabi Mincho", serif;
+  font-size: clamp(20px, 3vw, 40px);
+  margin: 0;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+#hotel .room__imgs {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  padding: 3% 1%;
+  box-sizing: border-box;
+}
+
+#hotel .room__img1 {
+  width: 100%;
+  max-width: 44%;
+  background-color: #ffffff7c;
+}
+
+#hotel .room__img-small {
+  display: flex;
+  max-width: 56%;
+  flex-wrap: wrap;
+}
+
+#hotel .room__img2,
+#hotel .room__img3 {
+  width: 100%;
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  object-position: top;
+  padding: 3% 1%;
+  background-color: #ffffff7c;
+}
+
+#hotel .room__info {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 24px;
+  width: 100%;
+}
+
+#hotel .room__price {
+  margin: 20px;
+}
+
+#hotel .room__detail--link {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+  color: #ffffff;
+  background-color: #B8A36C;
+  border-radius: 10px 10px;
+}
+
+#hotel .menu__guide {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 20px;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+#hotel .guide__content {
+  display: flex;
+}
+
+#hotel .guide__left,
+#hotel .guide__right {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+#hotel .guide__list {
+  margin-bottom: 15px;
+}
+
+#hotel .guide__list::before {
+  content: "";
+}
+
+#hotel .meal::before {
+  content: "・";
+}
+
+#hotel .color__red {
+  color: #ff0000;
+}
+
+#hotel .color__blue {
+  color: #1b24ff;
+}
+
+#hotel .guide__deco {
+  width: 30%;
+  margin-top: -50px;
+  float: right;
+}
+
+#hotel .amenities__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 40px;
+  margin: 60px 0;
+}
+
+#hotel .amenities__ttl::before,
+#hotel .amenities__ttl::after {
+  display: block;
+  flex: 1;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100% 100%;
+  content: "";
+}
+
+#hotel .amenities__ttl::before {
+  background-image: url(../img/hotel/ttl_left.png);
+  margin-right: 30px;
+}
+
+#hotel .amenities__ttl::after {
+  background-image: url(../img/hotel/ttl_right.png);
+  margin-left: 30px;
+}
+
+#hotel .amenities__gallery {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+#hotel .amenities__gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#hotel .amenities__gallery .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+#hotel .amenities__gallery.slick-slider {
+  width: 100%;
+}
+
+#hotel .amenities__gallery .slick-slide {
+  height: min(60vh, 500px);
+  color: white;
+}
+
+#hotel .amenities__gallery .slick-dots li {
+  width: 5px;
+}
+
+#hotel .amenities__gallery .slick-dots {
+  bottom: 10px;
+  background-color: transparent;
+}
+
+#hotel .amenities__gallery .slick-prev::before,
+#hotel .amenities__gallery .slick-next::before {
+  content: '';
+}
+
+#hotel .amenities__gallery .slick-prev,
+#hotel .amenities__gallery .slick-next {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+#hotel .amenities__gallery .slick-prev {
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  top: 50%;
+  left: 33.333% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#hotel .amenities__gallery .slick-next {
+  border-top: 2px solid #000000;
+  border-left: 2px solid #000000;
+  top: 50%;
+  left: 66.666% !important;
+  right: auto !important;
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+#hotel .amenities__gallery .slick-next.slick-arrow:before,
+#hotel .amenities__gallery .slick-prev.slick-arrow:before {
+  color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel .amenities__gallery {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #hotel .amenities__gallery .slick-slide {
+    align-items: center;
+    width: 300px;
+  }
+
+  #hotel .amenities__gallery .slick-dots li button:before {
+    color: white;
+  }
+
+  #hotel .amenities__gallery .slick-prev,
+  #hotel .amenities__gallery .slick-next {
+    width: 20px !important;
+    height: 20px !important;
+    z-index: 10;
+  }
+
+  #hotel .amenities__gallery .slick-prev {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    top: 50%;
+    left: 33.333%;
+    right: auto;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  #hotel .amenities__gallery .slick-next {
+    border-top: 2px solid #000000;
+    border-left: 2px solid #000000;
+    top: 50%;
+    left: 66.666%;
+    right: auto;
+    transform: translate(-50%, -50%) rotate(135deg);
+  }
+}
+
+#hotel .amenities__table,
+#hotel .amenities__th,
+#hotel .amenities__td {
+  border: 1px solid #000000;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 16px;
+}
+
+#hotel .amenities__table {
+  width: 90%;
+}
+
+#hotel .amenities__td li::before {
+  content: "・";
+}
+
+#hotel .amenities__th {
+  background-color: #B8A36C80;
+  vertical-align: middle;
+}
+
+#hotel .ul_grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+}
+
+#hotel .amenities__note {
+  margin-top: 40px;
+}
+
+#hotel .large_bath__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 40px;
+  margin: 60px 0;
+}
+
+#hotel .large_bath__ttl::before,
+#hotel .large_bath__ttl::after {
+  display: block;
+  flex: 1;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 100% 100%;
+  content: "";
+}
+
+#hotel .large_bath__ttl::before {
+  background-image: url(../img/hotel/ttl_left.png);
+  margin-right: 30px;
+}
+
+#hotel .large_bath__ttl::after {
+  background-image: url(../img/hotel/ttl_right.png);
+  margin-left: 30px;
+}
+
+#hotel .budonoyu__img1 {
+  width: 45%;
+  padding: 3% 1%;
+  background-color: #ffffff7c;
+}
+
+#hotel .budonoyu__wrapper {
+  display: flex;
+}
+
+#hotel .budonoyu__right {
+  margin: 20px;
+}
+
+#hotel .budonoyu_desc {
+  margin: 0;
+}
+
+#hotel .budonoyu_aside__ttl {
+  font-family: "Sawarabi Mincho", serif;
+}
+
+#hotel .budonoyu_aside__dl {
+  display: flex;
+  gap: 10px;
+  margin: 10px;
+  font-family: "Sawarabi Mincho", serif;
+}
+
+#hotel .budonoyu__img2,
+#hotel .budonoyu__img3 {
+  width: 45%;
+  height: auto;
+  object-fit: cover;
+  padding: 3% 1%;
+  background-color: #ffffff7c;
+}
+
+/* 19. #hotel_detail */
+#hotel_detail body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#hotel_detail .hidden {
+  display: none;
+}
+
+#hotel_detail .hotel_detail__ttl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 36px;
+  margin: 60px 0;
+  white-space: nowrap;
+}
+
+#hotel_detail .hotel_detail__ttl::before,
+#hotel_detail .hotel_detail__ttl::after {
+  flex: 1;
+  background-repeat: no-repeat;
+
+  content: '';
+  display: block;
+  width: 100%;
+  height: 10px;
+  border-top: 1.5px solid #B8A36C;
+  border-bottom: 1.5px solid #B8A36C;
+}
+
+#hotel_detail .hotel_detail__ttl::before {
+  margin-right: 10%;
+}
+
+#hotel_detail .hotel_detail__ttl::after {
+  margin-left: 10%;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .hotel_detail__ttl {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  #hotel_detail .hotel_detail_ttl::before {
+    margin-right: 3%;
+  }
+
+  #hotel_detail .hotel_detail_ttl::after {
+    margin-left: 3%;
+  }
+}
+
+#hotel_detail .hotel_detail_ttl--text {
+  font-family: "Sawarabi Mincho", serif;
+  font-size: 20px;
+  margin: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .hotel_detail_ttl--text {
+    font-size: 13px;
+  }
+
+}
+
+#hotel_detail .room_detail {
+  width: 80%;
+  margin: 30px auto;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .room_detail {
+    width: 85%;
+  }
+}
+
+#hotel_detail .room_detail__card {
+  font-family: "Sawarabi Mincho", serif;
+  background-color: #ffffff;
+  border: 4px solid #b8a36d;
+  border-radius: 15px;
+  padding: 100px 80px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .room_detail__card {
+    padding: 50px 10%;
+  }
+}
+
+#hotel_detail .card__ttl {
+  font-size: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .card__ttl {
+    font-size: 24px;
+  }
+}
+
+
+#hotel_detail .room__gallery {
+  width: 100%;
+  overflow: hidden;
+  margin: 20px auto;
+  background-color: blue;
+}
+
+#hotel_detail .room__gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #00B3FF;
+}
+
+#hotel_detail .slick-track {
+  display: flex;
+  align-items: center;
+}
+
+#hotel_detail .slick-slider {
+  width: 100%;
+}
+
+#hotel_detail .room__gallery .slick-slide {
+  height: 500px;
+  color: white;
+}
+
+#hotel_detail .slick-dots li {
+  width: 5px;
+}
+
+#hotel_detail .slick-dots {
+  bottom: 10px;
+  background-color: transparent;
+}
+
+#hotel_detail .slick-prev::before,
+#hotel_detail .slick-next::before {
+  content: '';
+}
+
+#hotel_detail .slick-prev {
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transform: rotate(-45deg);
+  left: 5%;
+}
+
+#hotel_detail .slick-next {
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  transform: rotate(135deg);
+  right: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  #hotel_detail .room__gallery {
+    width: 100%;
+    aspect-ratio: 16 / 11;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  #hotel_detail .room__gallery .slick-slide {
+    align-items: center;
+    width: 300px;
+  }
+
+  #hotel_detail .slick-dots li button:before {
+    color: white;
+  }
+
+  #hotel_detail .slick-prev::before,
+  #hotel_detail .slick-next::before {
+    content: '';
+  }
+
+  #hotel_detail .slick-prev,
+  #hotel_detail .slick-next {
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+  }
+
+  #hotel_detail .slick-prev {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transform: rotate(-45deg);
+    left: 10%;
+  }
+
+  #hotel_detail .slick-next {
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transform: rotate(135deg);
+    right: 10%;
+  }
+}
+
+#hotel_detail .slick-next.slick-arrow:before,
+#hotel_detail .slick-prev.slick-arrow:before {
+  color: white;
+}
+
+#hotel_detail .card__table {
+  width: 100%;
+  margin-top: 40px;
+}
+
+#hotel_detail .table__th {
+  border: 1px solid #00000080;
+  background-color: #b8a36d80;
+  padding: 20px;
+  font-weight: 520;
+  vertical-align: middle;
+}
+
+#hotel_detail .table__td {
+  background-color: white;
+  border: 1px solid #00000080;
+  padding: 20px;
+  font-weight: 520;
+  vertical-align: middle;
+}
+
+#hotel_detail .table__td dt {
+  font-weight: 520;
+}
+
+#hotel_detail .ul_grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-rows: 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+}
+
+#hotel_detail .ul_grid li::before {
+  content: "・";
+}
+
+@media screen and (max-width: 768px) {
+
+  #hotel_detail .table__th:not(:first-child),
+  #hotel_detail .table__td:not(:first-child) {
+    border-top: none;
+  }
+
+  #hotel_detail .table__td,
+  #hotel_detail .table__th {
+    display: block;
+    padding: 10px;
+  }
+
+  #hotel_detail .table__td {
+    padding: 20px;
+
+  }
+
+  #hotel_detail .ul_grid {
+    padding: 10px;
+    grid-auto-flow: row;
+    grid-template-rows: none;
+  }
+}
+
+#hotel_detail .aside {
+  width: 80%;
+  margin: 20px auto;
+  padding: 25px 7%;
+  font-family: "Sawarabi Mincho", serif;
+}
+
+#hotel_detail .aside__ttl {
+  font-size: 40px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+/* 20. Slick Slider Override */
+.slick-prev,
+.slick-next {
+  width: 40px !important;
+  height: 40px !important;
+  z-index: 99;
+}
+
+#hotel_detail .slick-prev,
+#hotel_detail .slick-next {
+  width: 60px !important;
+  height: 60px !important;
+  z-index: 99;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 30px !important;
+  opacity: 1 !important;
+  color: #000;
+  line-height: 1;
+}
+
+.slick-prev {
+  left: 170px !important;
+}
+
+.slick-next {
+  right: 170px !important;
+}
+
+#hotel_detail .slick-prev {
+  left: -60px !important;
+}
+
+#hotel_detail .slick-next {
+  right: -80px !important;
+}
+
+@media screen and (max-width: 768px) {
+
+  .slick-prev,
+  .slick-next {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px !important;
+  }
+
+  .slick-prev {
+    left: -10px !important;
+    z-index: 100;
+  }
+
+  .slick-next {
+    right: -10px !important;
+    z-index: 100;
+  }
+}
+
+#hotel_detail .room__gallery .slick-prev {
+  left: 12px !important;
+}
+
+#hotel_detail .room__gallery .slick-next {
+  right: 12px !important;
+}
+
+
+/* 21. Hamburger */
+
+.hamburger {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+  /* Hide header bar and logo on mobile */
+  .header {
+    background: none;
+    padding: 0;
+    height: 0;
+  }
+
+  .header h1 {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger__button {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .hamburger__line {
+    width: 25px;
+    height: 2px;
+    background-color: #000;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger__button.is-active .hamburger__line {
+    background-color: #fff;
+  }
+
+  .hamburger__button.is-active .hamburger__line--top {
+    width: 14px;
+    transform: translate(7px, 3px) rotate(45deg);
+  }
+
+  .hamburger__button.is-active .hamburger__line--middle {
+    opacity: 1;
+  }
+
+  .hamburger__button.is-active .hamburger__line--bottom {
+    width: 14px;
+    transform: translate(7px, -3px) rotate(-45deg);
+  }
+
+  .hamburger__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    background: #B8A36C;
+    color: #fff;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9998;
+    transition: right 0.3s ease;
+    padding: 20px;
+  }
+
+  .hamburger__menu.is-active {
+    right: 0;
+  }
+
+  .hamburger__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding-bottom: 10px;
+  }
+
+  .hamburger__title {
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  .hamburger__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .hamburger__item {
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+
+  .header .hamburger__link {
+    display: block;
+    padding: 15px 0;
+    color: #fff;
+    font-family: "Sawarabi Mincho", serif;
+    font-size: 16px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .header .hamburger__link:hover {
+    opacity: 0.7;
+  }
+
+  .nav a {
+    transition: opacity 0.3s;
+  }
+
+  .nav a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+  .header h1 a {
+    transition: opacity 0.3s;
+    display: block;
+  }
+
+  .header h1 a:hover {
+    opacity: 0.6;
+  }
+}
+/* 料金表エリア全体のスタイル */
+#banquet_plan .banquet_fees__table-area {
+    width: 100%;
+    margin: 0 auto 40px;
+}
+
+/* 横スクロール対応（スマホ用） */
+#banquet_plan .fee-table-scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+#banquet_plan .fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 24px;
+    text-align: center;
+    min-width: 600px; /* スマホでもこれ以下の幅には潰さない */
+}
+
+/* ヘッダー（ベージュ背景） */
+#banquet_plan .fee-table th {
+    background-color: #B8A36C40;
+}
+
+#banquet_plan .fee-table thead {
+    background-color: #B8A36C40;
+}
+
+#banquet_plan .fee-table tbody {
+    background-color: #ffffff;
+}
+
+#banquet_plan .fee-table th:last-child {
+    border-right: none;
+}
+
+/* データ行 */
+#banquet_plan .fee-table td {
+    background-color: #ffffff;
+}
+
+#banquet_plan .fee-table td:last-child {
+    border-right: none;
+}
+
+/* 各セルの調整 */
+#banquet_plan .fee-table th,
+#banquet_plan .fee-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px;
+    height: 95px;
+    border: none;
+}
+
+#banquet_plan .fee-table th:first-child,
+#banquet_plan .fee-table td:first-child {
+    border-right: 1px solid #B8A36C;
+}
+
+#banquet_plan .fee-table tr:not(:first-child) td {
+    border-top: 1px solid #B8A36C;
+}
+
+#banquet_plan .fee-table tbody td:nth-child(4) {
+    border-left: 1px solid #B8A36C;
+}
+
+#banquet_plan .fee-table .cell-remarks {
+    text-align: left;
+}
+
+#banquet_plan .td_inner {
+    display: inline-block;
+    text-align: left;
+}
+
+/* Mobile Only Title (Hidden on Desktop) */
+.mobile-only-ttl {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Mobile Only Title (Visible on Mobile) */
+  .mobile-only-ttl {
+    display: block;
+    margin: 0 auto 20px auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  /* Glass Page Mobile Adjustments */
+  #glass .intro-img {
+    display: none;
+  }
+  #glass .right-copy-wrapper img {
+    display: none;
+  }
+  /* Center the title image above paragraph */
+  #glass .intro-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Restaurant Page Mobile Adjustments */
+  #restaurant .intro-img {
+    display: none;
+  }
+  #restaurant .right-copy-wrapper img {
+    display: none;
+  }
+  #restaurant .intro-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Hotel Page Mobile Adjustments */
+  #hotel .intro-img {
+    display: none;
+  }
+  #hotel .right-copy-wrapper {
+    display: none;
+  }
+  #hotel .intro__lead-bg {
+    display: none;
+  }
+  #hotel .banner__txt {
+    display: none;
+  }
+  #hotel .intro-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  /* Hamburger visibility on hero images */
+  body.home .hamburger__line,
+  body.single-glasspage .hamburger__line,
+  body.single-restaurantpage .hamburger__line,
+  body.page-template-page-hotelpage .hamburger__line,
+  body.page-template-page-hotelpage-php .hamburger__line {
+    background-color: #000;
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.35);
+  }
+
+  /* Top page first view */
+  body.home .morino-kuni {
+    min-height: 400px;
+    height: 50vh;
+    background-position: center;
+    position: relative;
+    padding-bottom: 60px;
+  }
+
+  body.home .morino-kuni-title {
+    top: 16px;
+    left: 16px;
+  }
+
+  body.home .morino-kuni-title h1 {
+    font-size: 20px;
+    letter-spacing: 0.04em;
+  }
+
+  body.home .morino-kuni-link {
+    position: absolute;
+    bottom: 10px;
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    gap: 10px;
+    padding: 0;
+  }
+
+  body.home .morino-kuni-link a {
+    color: #333; /* 文字色を濃い色に */
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 12px 0;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.85); /* 背景を白っぽく */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 320px;
+    white-space: normal;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+
+  body.home .morino-kuni-link a::after {
+    content: "";
+  }
+
+  /* Glass / Restaurant / Hotel first view */
+  body.single-glasspage #glass .morino-kuni,
+  body.single-restaurantpage #restaurant .morino-kuni,
+  body.page-template-page-hotelpage #hotel .morino-kuni,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni {
+    min-height: 70vh;
+    height: auto;
+  }
+
+  body.single-glasspage #glass .morino-kuni-title,
+  body.single-restaurantpage #restaurant .morino-kuni-title,
+  body.page-template-page-hotelpage #hotel .morino-kuni-title,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-title {
+    top: 16px;
+    left: 16px;
+  }
+
+  body.single-glasspage #glass .morino-kuni-title p,
+  body.single-restaurantpage #restaurant .morino-kuni-title p,
+  body.page-template-page-hotelpage #hotel .morino-kuni-title p,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-title p {
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  body.single-glasspage #glass .morino-kuni-link,
+  body.single-restaurantpage #restaurant .morino-kuni-link,
+  body.page-template-page-hotelpage #hotel .morino-kuni-link,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-link {
+    top: 56%;
+    width: 100%;
+    padding: 0 16px;
+  }
+
+  body.single-glasspage #glass .morino-kuni-link h1,
+  body.single-restaurantpage #restaurant .morino-kuni-link h1,
+  body.page-template-page-hotelpage #hotel .morino-kuni-link h1,
+  body.page-template-page-hotelpage-php #hotel .morino-kuni-link h1 {
+    font-size: 22px;
+    line-height: 1.6;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+
+  /* News layout (Top + Glass + Restaurant + Hotel) */
+  body.home .news-wrapper,
+  body.single-glasspage .news-wrapper,
+  body.single-restaurantpage .news-wrapper,
+  body.page-template-page-hotelpage .news-wrapper,
+  body.page-template-page-hotelpage-php .news-wrapper {
+    padding: 24px 0 16px;
+  }
+
+  body.home .news-box,
+  body.single-glasspage .news-box,
+  body.single-restaurantpage .news-box,
+  body.page-template-page-hotelpage .news-box,
+  body.page-template-page-hotelpage-php .news-box {
+    width: 92%;
+    padding: 16px 12px;
+    border-radius: 8px;
+  }
+
+  body.home .news-left,
+  body.single-glasspage .news-left,
+  body.single-restaurantpage .news-left,
+  body.page-template-page-hotelpage .news-left,
+  body.page-template-page-hotelpage-php .news-left {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 4px 12px;
+    text-align: left;
+  }
+
+  body.home .news-title,
+  body.single-glasspage .news-title,
+  body.single-restaurantpage .news-title,
+  body.page-template-page-hotelpage .news-title,
+  body.page-template-page-hotelpage-php .news-title {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  body.home .news-btn,
+  body.single-glasspage .news-btn,
+  body.single-restaurantpage .news-btn,
+  body.page-template-page-hotelpage .news-btn,
+  body.page-template-page-hotelpage-php .news-btn {
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+
+  body.home .news-list,
+  body.single-glasspage .news-list,
+  body.single-restaurantpage .news-list,
+  body.page-template-page-hotelpage .news-list,
+  body.page-template-page-hotelpage-php .news-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  body.home .news-card img,
+  body.single-glasspage .news-card img,
+  body.single-restaurantpage .news-card img,
+  body.page-template-page-hotelpage .news-card img,
+  body.page-template-page-hotelpage-php .news-card img {
+    height: 120px;
+  }
+
+  body.home .news-card-content,
+  body.single-glasspage .news-card-content,
+  body.single-restaurantpage .news-card-content,
+  body.page-template-page-hotelpage .news-card-content,
+  body.page-template-page-hotelpage-php .news-card-content {
+    padding: 8px 10px 10px;
+    text-align: center;
+  }
+
+  body.home .news-card h3,
+  body.single-glasspage .news-card h3,
+  body.single-restaurantpage .news-card h3,
+  body.page-template-page-hotelpage .news-card h3,
+  body.page-template-page-hotelpage-php .news-card h3 {
+    font-size: 12px;
+    margin: 6px 0 4px;
+  }
+
+  body.home .news-card p,
+  body.single-glasspage .news-card p,
+  body.single-restaurantpage .news-card p,
+  body.page-template-page-hotelpage .news-card p,
+  body.page-template-page-hotelpage-php .news-card p {
+    font-size: 11px;
+    margin: 0;
+    text-align: center;
+  }
+
+  body.home .news-card-footer,
+  body.single-glasspage .news-card-footer,
+  body.single-restaurantpage .news-card-footer,
+  body.page-template-page-hotelpage .news-card-footer,
+  body.page-template-page-hotelpage-php .news-card-footer {
+    height: 10px;
+  }
+
+  /* Purpose layout (Top page) */
+  body.home .purpose {
+    padding: 12px;
+    margin-bottom: 40px;
+  }
+
+  body.home .purpose__contents {
+    flex-direction: column;
+    gap: 14px;
+    min-height: auto;
+    margin: 0;
+  }
+
+  body.home .purpose__item {
+    text-align: center;
+  }
+
+  body.home .purpose__item--restaurant {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.home .purpose__link {
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    border: 1px solid #B8A36C;
+    position: relative;
+  }
+
+  body.home .purpose__link::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    color: #fff;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+  }
+
+
+
+  body.home .purpose__image_glass,
+  body.home .purpose__image_restaurant,
+  body.home .purpose_image_hotel {
+    margin-bottom: 0;
+  }
+
+  body.home .purpose__label {
+    margin-top: 6px;
+    font-size: 12px;
+  }
+
+  /* Banquet Plan Mobile Adjustments */
+  #banquet_plan .banquet_fees__ttl {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  #banquet_plan .fee-table {
+    min-width: 0;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  #banquet_plan .fee-table th,
+  #banquet_plan .fee-table td {
+    padding: 5px;
+    height: auto;
+  }
+
+  #banquet_plan .fee-table th span {
+    font-size: 10px;
+    display: block;
+  }
+}
+
