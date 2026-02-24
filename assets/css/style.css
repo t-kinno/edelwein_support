@@ -619,21 +619,21 @@ body.home .morino-kuni-content {
 
 body.home .morino-kuni-link {
   position: absolute;
-  bottom: 18%;
+  bottom: 10%;
   right: 8%;
   border-right: 2px solid #6b6b6b;
   gap: 8px;
   background-color: rgba(255, 255, 255, 0.454);
-  padding: 10px 16px;
+  padding: 10px 30px;
   margin: 0;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
 body.home .morino-kuni-link a {
   color: black;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.6;
-  padding: 0;
+  padding: 6px 0;
   border-radius: 4px;
   white-space: nowrap;
   display: inline-block;
@@ -5124,8 +5124,8 @@ body.page-template-page-contactpage {
     color: #333; /* 文字色を濃い色に */
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 30px;
-    padding: 12px 0;
-    font-size: 14px;
+    padding: 16px 0;
+    font-size: 12px;
     letter-spacing: 0.1em;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.85); /* 背景を白っぽく */
