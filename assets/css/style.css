@@ -4290,6 +4290,7 @@ body.page-template-page-contactpage {
 
 @media screen and (max-width: 768px) {
   #hotel .amenities__gallery {
+    position: relative;
     width: 100%;
     aspect-ratio: 16 / 11;
     object-fit: cover;
@@ -4307,6 +4308,8 @@ body.page-template-page-contactpage {
 
   #hotel .amenities__gallery .slick-prev,
   #hotel .amenities__gallery .slick-next {
+    position: absolute;
+    top: 65%;
     width: 20px !important;
     height: 20px !important;
     z-index: 10;
@@ -4315,19 +4318,15 @@ body.page-template-page-contactpage {
   #hotel .amenities__gallery .slick-prev {
     border-top: 2px solid #000000;
     border-left: 2px solid #000000;
-    top: 50%;
-    left: 33.333%;
-    right: auto;
-    transform: translate(-50%, -50%) rotate(-45deg);
+    left: 2% !important;
+    transform: translateY(-50%) rotate(-45deg);
   }
 
   #hotel .amenities__gallery .slick-next {
     border-top: 2px solid #000000;
     border-left: 2px solid #000000;
-    top: 50%;
-    left: 66.666%;
-    right: auto;
-    transform: translate(-50%, -50%) rotate(135deg);
+    left: 93% !important;
+    transform: translateY(-50%) rotate(135deg);
   }
 }
 
