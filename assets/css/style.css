@@ -4287,6 +4287,16 @@ body.page-template-page-contactpage {
 }
 
 @media screen and (max-width: 768px) {
+  #hotel .menu__guide { 
+    flex-direction: column; 
+    font-size: 16px;
+  }
+  #hotel .guide__content {
+    flex-direction: column;
+  }
+  #hotel .guide__left {
+    margin-bottom: 5%;
+  }
   #hotel .amenities__gallery {
     width: 100%;
     aspect-ratio: 16 / 11;
