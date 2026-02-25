@@ -1133,6 +1133,7 @@ body.page-template-page-hotelpage-php .header h1 img {
 }
 
 #glass .morino-kuni-sub {
+  max-width: 900px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1153,6 +1154,7 @@ body.page-template-page-hotelpage-php .header h1 img {
   font-family: "Sawarabi Mincho", serif;
   text-align: center;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* #glass .morino-kuni-address {
