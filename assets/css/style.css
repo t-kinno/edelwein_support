@@ -61,11 +61,11 @@ img {
   opacity: 0.6;
 }
 
-.nav {
+.nav ul {
   display: flex;
   align-items: center;
   writing-mode: horizontal-tb;
-  gap: 30px;
+  gap: 24px;
 }
 
 .nav a {
@@ -75,6 +75,8 @@ img {
   text-align: center;
   letter-spacing: 0.2em;
   transition: opacity 0.3s;
+  word-break: auto-phrase;
+  max-width: 120px;
 }
 
 .nav a:hover {
@@ -686,16 +688,6 @@ body.home {
   --home-header-height: 68px;
   --home-info-height: 40px;
   --home-line-height: 8px;
-}
-
-body.home .nav {
-  gap: 24px;
-}
-
-body.home .nav a {
-  font-size: 12px;
-  line-height: 1.2;
-  letter-spacing: 0.14em;
 }
 
 body.home .morino-kuni-address {
