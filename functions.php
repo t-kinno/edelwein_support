@@ -4,10 +4,17 @@ function edelwein_theme_setup()
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_image_size('page_eyecatch', 1100, 610, true);
-    register_nav_menu('main-menu', 'メインメニュー');
     add_theme_support('wp-block-styles');
     add_theme_support('align-wide');
     add_theme_support('responsive-embeds');
+
+    register_nav_menus(
+        [
+            'main-menu' => 'メインメニュー',
+            'sp-hamburger-menu' => 'スマートフォン用ハンバーガーメニュー',
+            'footer-menu' => 'フッターメニュー',
+        ]
+    );
 }
 add_action('after_setup_theme', 'edelwein_theme_setup');
 

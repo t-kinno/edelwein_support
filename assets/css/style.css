@@ -4898,12 +4898,12 @@ body.page-template-page-contactpage {
     padding: 0;
   }
 
-  .hamburger__item {
+  .hamburger__list li {
     margin-bottom: 0;
     border-bottom: none;
   }
 
-  .header .hamburger__link {
+  .header .hamburger__list li a {
     display: block;
     padding: 15px 0;
     color: #fff;
@@ -4913,7 +4913,7 @@ body.page-template-page-contactpage {
     transition: opacity 0.3s;
   }
 
-  .header .hamburger__link:hover {
+  .header .hamburger__list li a:hover {
     opacity: 0.7;
   }
 

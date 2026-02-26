@@ -13,13 +13,6 @@
     <?php wp_body_open(); ?>
     <header class="header">
         <h1><a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/edelwein.svg" alt="<?php bloginfo('name'); ?>"></a></h1>
-        <!-- <nav class="nav">
-            <a href="<?php echo esc_url(home_url('/glasspage/top')); ?>">ガラス体験工房<br>森のくに</a>
-            <a href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン<br>ベルンドルフ</a>
-            <a href="<?php echo esc_url(home_url('/hotel')); ?>">ホテル<br>ベルンドルフ</a>
-            <a href="<?php echo esc_url(home_url('/news')); ?>">お知らせ</a>
-            <a href="<?php echo esc_url(home_url('/contactpage')); ?>">お問い合わせ</a>
-        </nav> -->
         <?php
             wp_nav_menu(
                 [
@@ -43,7 +36,7 @@
                     <span class="hamburger__title">Menu</span>
                 </div>
 
-                <ul class="hamburger__list">
+                <!-- <ul class="hamburger__list">
                     <li class="hamburger__item">
                         <a class="hamburger__link" href="<?php echo esc_url(home_url('/')); ?>">ホーム</a>
                     </li>
@@ -65,7 +58,16 @@
                     <li class="hamburger__item">
                         <a class="hamburger__link" href="<?php echo esc_url(home_url('/contactpage')); ?>">お問い合わせ</a>
                     </li>
-                </ul>
+                </ul> -->
+                <?php
+                    wp_nav_menu(
+                        [
+                            'theme_location' => 'sp-hamburger-menu',
+                            'container' => false,
+                            'menu_class' => 'hamburger__list',
+                        ]
+                    );
+                ?>
             </nav>
         </div>
     </header>
