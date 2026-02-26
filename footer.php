@@ -301,7 +301,7 @@
             </div>
         </section>
 
-        <nav class="footer_nav">
+        <!-- <nav class="footer_nav">
             <ul>
                 <li><a href="<?php echo esc_url(home_url('/glasspage/top')); ?>">ガラス体験工房 森のくに</a></li>
                 <li><a href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン ベルンドルフ</a></li>
@@ -310,7 +310,15 @@
                 <li><a href="<?php echo esc_url(home_url('/company/top')); ?>">会社概要</a></li>
                 <li><a href="<?php echo esc_url(home_url('/contactpage')); ?>">お問い合わせ</a></li>
             </ul>
-        </nav>
+        </nav> -->
+        <?php
+            wp_nav_menu(
+                [
+                    'theme_location' => 'footer-menu',
+                    'container_class' => 'footer_nav',
+                ]
+            );
+        ?>
 
         <section class="footer_copyright">
             <p>© EDEL WEIN support. All Rights reserved.</p>
