@@ -272,7 +272,7 @@
                                 </div>
 
                                 <?php if ($c_slug === 'glass'): ?>
-                                    <p style="font-size: 0.8rem; margin-top: 5px;">※体験予約はお電話にてお願い致します。</p>
+                                    <p style="font-size: 0.8rem; margin-top: 5px;" class="footer_contact_content_company_glassnote">※体験予約はお電話にてお願い致します。</p>
                                 <?php endif; ?>
 
                                 <a class="footer_contact_content_company_button" href="<?php echo esc_url($contact_link); ?>">詳細はこちら</a>
