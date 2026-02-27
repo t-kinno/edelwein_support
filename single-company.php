@@ -15,14 +15,18 @@
     ?>
 
     <h1 class="main__ttl">会社概要</h1>
-    <section class="spirit">
-        <h2 class="spirit__ttl">企業精神</h2>
-        <p class="spirit__p"><?php echo esc_html($corporate_spirit); ?></p>
-    </section>
-    <section class="philosophy">
-        <h2 class="philosophy__ttl">基本理念</h2>
-        <p class="philosophy__p"><?php echo esc_html($basic_philosophy); ?></p>
-    </section>
+    <?php if ($corporate_spirit): ?>
+        <section class="spirit">
+            <h2 class="spirit__ttl">企業精神</h2>
+            <p class="spirit__p"><?php echo esc_html($corporate_spirit); ?></p>
+        </section>
+    <?php endif; ?>
+    <?php if ($basic_philosophy): ?>
+        <section class="philosophy">
+            <h2 class="philosophy__ttl">基本理念</h2>
+            <p class="philosophy__p"><?php echo esc_html($basic_philosophy); ?></p>
+        </section>
+    <?php endif; ?>
     <section>
         <table class="info__table">
             <tbody>
