@@ -32,7 +32,7 @@ if ($query_info->have_posts()) {
 
             <div class="morino-kuni-link">
                 <a href="<?php echo esc_url(home_url('/glasspage/top')); ?>">ガラス体験工房 森のくに</a>
-                <a href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン ベルンドルフ</a>
+                <!-- <a href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン ベルンドルフ</a> -->
                 <a href="<?php echo esc_url(home_url('/hotel')); ?>">ホテル ベルンドルフ</a>
             </div>
         </div>
@@ -136,10 +136,10 @@ if ($query_info->have_posts()) {
                     <a class="purpose__label" href="<?php echo esc_url(home_url('/glasspage/top')); ?>">ガラス体験工房 森のくに</a>
                 </div>
                 <div class="purpose__item purpose__item--restaurant">
-                    <a class="purpose__link" href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">
+                    <a class="purpose__link" style="pointer-events: none;" href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">
                         <img class="purpose__image_restaurant" src="<?php echo get_template_directory_uri(); ?>/assets/img/index/meal.png" alt="レストラン">
                     </a>
-                    <a class="purpose__label" href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン ベルンドルフ</a>
+                    <a class="purpose__label" style="pointer-events: none;" href="<?php echo esc_url(home_url('/restaurantpage/top')); ?>">レストラン ベルンドルフ</a>
                 </div>
 
                 <div class="purpose__item purpose__item--hotel">

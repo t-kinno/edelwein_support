@@ -274,8 +274,13 @@
                                 <?php if ($c_slug === 'glass'): ?>
                                     <p style="font-size: 0.8rem; margin-top: 5px;" class="footer_contact_content_company_glassnote">※体験予約はお電話にてお願い致します。</p>
                                 <?php endif; ?>
-
-                                <a class="footer_contact_content_company_button" href="<?php echo esc_url($contact_link); ?>">詳細はこちら</a>
+                                
+                                <!-- レストランの場合のみ詳細リンクを表示しない（非表示処理） -->
+                                <?php if ($c_slug === 'restaurant'): ?>
+                                <?php else: ?>
+                                    <a class="footer_contact_content_company_button" href="<?php echo esc_url($contact_link); ?>">詳細はこちら</a>
+                                <?php endif; ?>
+                                
                             </div>
                 <?php
                         endwhile;
