@@ -205,12 +205,18 @@ img {
 }
 
 body.home .morino-kuni-address {
+  margin: 2% 0;
+  color: #333;
+  text-align: center;
+  line-height: 1.8;
+}
+/* body.home .morino-kuni-address {
   margin-top: 10px;
   margin-bottom: 20px;
   color: #333;
   text-align: center;
   line-height: 1.8;
-}
+} */
 
 .news-wrapper {
   width: 100%;
@@ -691,12 +697,8 @@ body.home {
 }
 
 body.home .morino-kuni-address {
-  height: var(--home-info-height);
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
+  margin: 2% 0;
+  font-size: 16px;
   white-space: nowrap;
 }
 
