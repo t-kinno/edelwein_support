@@ -3434,8 +3434,8 @@ body.page-template-page-contactpage {
   }
 
   .footer_map_mapdiv {
-    flex-direction: row;
     align-items: center;
+    display: block;
   }
 
   .footer_map_mapdiv_text {
@@ -3454,7 +3454,7 @@ body.page-template-page-contactpage {
   }
 
   .footer_map_mapdiv_map {
-    width: 70%;
+    width: 90%;
     height: 180px;
     margin: 0 0 0 5%;
   }
@@ -3464,6 +3464,8 @@ body.page-template-page-contactpage {
     margin-top: 15px;
     text-align: center;
     line-height: 1.6;
+    display: flex;
+    justify-content: center;
   }
 
   .footer_map_text {
@@ -3509,6 +3511,10 @@ body.page-template-page-contactpage {
 
   .footer_contact_content_company_detail {
     justify-content: center;
+  }
+
+  .footer_contact_content_company_glassnote {
+    text-align: center;
   }
 
   .footer_contact_content_company_button {
