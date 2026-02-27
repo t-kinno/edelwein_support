@@ -5381,3 +5381,17 @@ body.page-template-page-contactpage {
   }
 }
 
+/* recaptchaのバナーを非表示にするための文章 */
+.recaptcha-info {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+}
+.recaptcha-info a {
+  color: #666;
+  text-decoration: underline;
+}
+/*reCAPTCHAのロゴを非表示*/
+.grecaptcha-badge {
+	visibility: hidden; 
+}
