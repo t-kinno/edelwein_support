@@ -178,7 +178,7 @@ if ($query_info->have_posts()) {
             while ($query_main->have_posts()): $query_main->the_post();
 
                 $img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                if (!$img_url) $img_url = get_template_directory_uri() . '/assets/img/restaurant/dish.png';
+                if (!$img_url) $img_url = get_template_directory_uri() . '/assets/img/restaurant/noimage.png';
                 $price = get_field('price', get_the_ID());
                 $info  = get_field('info', get_the_ID()); // ★注釈取得
 
@@ -245,7 +245,7 @@ if ($query_info->have_posts()) {
             while ($query_side->have_posts()): $query_side->the_post();
 
                 $img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
-                if (!$img_url) $img_url = get_template_directory_uri() . '/assets/img/restaurant/dish.png';
+                if (!$img_url) $img_url = get_template_directory_uri() . '/assets/img/restaurant/noimage.png';
                 $price = get_field('price', get_the_ID());
                 $info  = get_field('info', get_the_ID()); // ★注釈取得
 
