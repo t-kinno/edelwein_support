@@ -1809,8 +1809,8 @@ body.page-template-page-hotelpage-php .header h1 img {
 
   #restaurant .menu-row,
   #restaurant .menu-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   #restaurant .wine-item,
